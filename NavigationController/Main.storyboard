@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xtA-Se-hKI">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Eventos-->
+        <scene sceneID="OUu-b8-xGW">
+            <objects>
+                <viewController id="LZG-bD-BBp" customClass="RootViewController" customModule="FeriaInternacional" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="emM-ui-6P7"/>
+                        <viewControllerLayoutGuide type="bottom" id="Psf-PR-a0x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GK7-mA-urc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Eventos" selectedImage="cm_audio_library_white" id="3tx-rr-Y8T"/>
+                    <navigationItem key="navigationItem" id="20Y-gB-F4k"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5kq-YT-8r3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2281" y="-504"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="uvK-GO-nSj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O4j-jr-GhC" customClass="AppNavigationController" customModule="FeriaInternacional" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="RqT-Yp-0tY"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ruX-44-ffD" customClass="NavigationBar" customModule="Material">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LZG-bD-BBp" kind="relationship" relationship="rootViewController" id="3tf-OE-abe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="43j-Xk-E8g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1406" y="-504"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="jnU-hT-WsS">
+            <objects>
+                <viewController id="28R-Gz-r7g" customClass="EventosViewController" customModule="FeriaInternacional" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CEV-bI-d3h"/>
+                        <viewControllerLayoutGuide type="bottom" id="R36-zp-gd6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="W1f-dT-Ep1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="74j-6h-Eio"/>
+                    <navigationItem key="navigationItem" id="EAr-Cc-iC3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M9N-CN-5Fx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2281" y="209"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="qGM-FS-2ln">
+            <objects>
+                <viewController id="HK1-2b-ZTm" customClass="ContenidoViewController" customModule="FeriaInternacional" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wPu-1b-vXg"/>
+                        <viewControllerLayoutGuide type="bottom" id="jgN-eS-MpI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fjF-l1-syQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="oEd-zv-Pyl"/>
+                    <navigationItem key="navigationItem" id="gwk-FF-ajc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YBL-CP-6Q4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2281" y="974"/>
+        </scene>
+        <!--App Bottom Navigation Controller-->
+        <scene sceneID="p8B-KH-MFR">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="xtA-Se-hKI" customClass="AppBottomNavigationController" customModule="FeriaInternacional" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="6SM-Sc-YAZ"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="cwN-bq-amZ">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="O4j-jr-GhC" kind="relationship" relationship="viewControllers" id="OZE-YF-AUi"/>
+                        <segue destination="rkG-Rl-eGq" kind="relationship" relationship="viewControllers" id="fzs-k5-iOs"/>
+                        <segue destination="ExY-eq-5Wf" kind="relationship" relationship="viewControllers" id="8WD-sG-SFU"/>
+                        <segue destination="Tfz-vn-ALz" kind="relationship" relationship="viewControllers" id="POB-k5-Ugz"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D9p-rP-dfM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-90" y="209"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="QsK-RV-2YJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rkG-Rl-eGq" customClass="AppNavigationController" customModule="FeriaInternacional" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="upw-TN-Wlf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="VQ0-dY-8ET" customClass="NavigationBar" customModule="Material">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="28R-Gz-r7g" kind="relationship" relationship="rootViewController" id="7cL-lU-aJB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="56a-Ja-DYA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1406" y="208"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="OA4-2W-dPA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ExY-eq-5Wf" customClass="AppNavigationController" customModule="FeriaInternacional" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="UkX-ng-SLR"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="VQn-sc-6JA" customClass="NavigationBar" customModule="Material">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HK1-2b-ZTm" kind="relationship" relationship="rootViewController" id="ENK-T7-wvK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jF2-bH-l3A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1406" y="974"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="Xb7-dI-8A2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tfz-vn-ALz" customClass="AppNavigationController" customModule="FeriaInternacional" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="sFk-2m-wSt"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="OFV-Rn-8FF" customClass="NavigationBar" customModule="Material">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4KY-sD-XRl" kind="relationship" relationship="rootViewController" id="zoj-t8-heZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iGx-Xe-k0y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1406" y="1777"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="67c-NI-m5r">
+            <objects>
+                <viewController id="4KY-sD-XRl" customClass="PerfilViewController" customModule="FeriaInternacional" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="trm-kS-peB"/>
+                        <viewControllerLayoutGuide type="bottom" id="IaD-OX-wOz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ppr-Kk-fY1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="rxO-QN-W54"/>
+                    <navigationItem key="navigationItem" id="ZWT-HT-FOl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ch-h0-PfS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2247" y="1776"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cm_audio_library_white" width="24" height="24"/>
+    </resources>
+</document>

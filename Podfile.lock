@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (4.0.1)
+  - Font-Awesome-Swift (1.5.3)
+  - Material (2.3.7):
+    - Material/Core (= 2.3.7)
+  - Material/Core (2.3.7)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - Font-Awesome-Swift (~> 1.5.3)
+  - Material (~> 2.0)
+
+SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  Font-Awesome-Swift: 6615ee6b875d148f767ea60b5b4ff54e2ea3122e
+  Material: b0aa466c72931f6dc3854a059e086455f4103a28
+
+PODFILE CHECKSUM: 148307764f2670c7d6eaafc27b9f7c3c17249557
+
+COCOAPODS: 1.1.1
