@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		6F488934571AC0E8AFCF41FE /* Pods_FeriaInternacional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF38AFECE675C58A337AA01 /* Pods_FeriaInternacional.framework */; };
+		856C8C211DDD0071001BC749 /* Evento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856C8C201DDD0071001BC749 /* Evento.swift */; };
+		856C8C231DDD0BEA001BC749 /* Edicion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856C8C221DDD0BEA001BC749 /* Edicion.swift */; };
+		856C8C251DDD0C1B001BC749 /* ContenidoCultural.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856C8C241DDD0C1B001BC749 /* ContenidoCultural.swift */; };
+		856C8C271DDD0C29001BC749 /* Tema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856C8C261DDD0C29001BC749 /* Tema.swift */; };
 		858475BB1DDBE963000DCDBC /* AppBottomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858475BA1DDBE963000DCDBC /* AppBottomNavigationController.swift */; };
 		858475BD1DDBE985000DCDBC /* EventosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858475BC1DDBE985000DCDBC /* EventosViewController.swift */; };
 		858475BF1DDBEA3D000DCDBC /* ContenidoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858475BE1DDBEA3D000DCDBC /* ContenidoViewController.swift */; };
@@ -37,6 +41,10 @@
 
 /* Begin PBXFileReference section */
 		195AAFABC537EC6BAFCFF7E2 /* Pods-FeriaInternacional.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FeriaInternacional.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FeriaInternacional/Pods-FeriaInternacional.debug.xcconfig"; sourceTree = "<group>"; };
+		856C8C201DDD0071001BC749 /* Evento.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Evento.swift; sourceTree = "<group>"; };
+		856C8C221DDD0BEA001BC749 /* Edicion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Edicion.swift; sourceTree = "<group>"; };
+		856C8C241DDD0C1B001BC749 /* ContenidoCultural.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContenidoCultural.swift; sourceTree = "<group>"; };
+		856C8C261DDD0C29001BC749 /* Tema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tema.swift; sourceTree = "<group>"; };
 		858475BA1DDBE963000DCDBC /* AppBottomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBottomNavigationController.swift; sourceTree = "<group>"; };
 		858475BC1DDBE985000DCDBC /* EventosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventosViewController.swift; sourceTree = "<group>"; };
 		858475BE1DDBEA3D000DCDBC /* ContenidoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContenidoViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +93,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		856C8C1F1DDD0057001BC749 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				856C8C201DDD0071001BC749 /* Evento.swift */,
+				856C8C221DDD0BEA001BC749 /* Edicion.swift */,
+				856C8C241DDD0C1B001BC749 /* ContenidoCultural.swift */,
+				856C8C261DDD0C29001BC749 /* Tema.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		858475C41DDBF68E000DCDBC /* GoogleIcons */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +134,7 @@
 		96CC49CB1D8DD984002CAB55 /* FeriaInternacional */ = {
 			isa = PBXGroup;
 			children = (
+				856C8C1F1DDD0057001BC749 /* Classes */,
 				858475C41DDBF68E000DCDBC /* GoogleIcons */,
 				96CC49CC1D8DD984002CAB55 /* AppDelegate.swift */,
 				9A5634E51D9EF9A7004BFC00 /* AppNavigationController.swift */,
@@ -259,11 +279,15 @@
 			files = (
 				858475BB1DDBE963000DCDBC /* AppBottomNavigationController.swift in Sources */,
 				858475BD1DDBE985000DCDBC /* EventosViewController.swift in Sources */,
+				856C8C271DDD0C29001BC749 /* Tema.swift in Sources */,
 				96CC49E51D8DDF61002CAB55 /* NextViewController.swift in Sources */,
 				9A5634E61D9EF9A7004BFC00 /* AppNavigationController.swift in Sources */,
+				856C8C211DDD0071001BC749 /* Evento.swift in Sources */,
 				96CC49CF1D8DD984002CAB55 /* RootViewController.swift in Sources */,
+				856C8C231DDD0BEA001BC749 /* Edicion.swift in Sources */,
 				96CC49CD1D8DD984002CAB55 /* AppDelegate.swift in Sources */,
 				858475C71DDBF76D000DCDBC /* GoogleIcon.swift in Sources */,
+				856C8C251DDD0C1B001BC749 /* ContenidoCultural.swift in Sources */,
 				858475C11DDBEA66000DCDBC /* PerfilViewController.swift in Sources */,
 				858475BF1DDBEA3D000DCDBC /* ContenidoViewController.swift in Sources */,
 			);
