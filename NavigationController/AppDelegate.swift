@@ -13,6 +13,7 @@ import Alamofire
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var data: NSArray = []
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -35,29 +36,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        /*Alamofire.request("https://feriaint.herokuapp.com/app/eventos").responseJSON { response in
+        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user
+        getEventos()
+        print(" //// QUE DESMADRE ////")
+        //print(self.data[0])
+        print(" //// QUE DESMADRE 2 ////")
+        
+        
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func getEventos(){
+        Alamofire.request("https://feriaint.herokuapp.com/app/eventos").responseJSON { response in
             print(response.request)  // original URL request
             print(response.response) // HTTP URL response
             print(response.data)     // server data
             print(response.result)   // result of response serialization
             
             if let JSON = response.result.value {
-                print("JSON: \(JSON)")
-            }
-        }*/
-        
-        Alamofire.request("https://feriaint.herokuapp.com/app/eventos").responseData { response in
-            debugPrint("All Response Info: \(response)")
-            
-            if let data = response.result.value, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)")
+                //print("JSON: \(JSON)")
+                print(JSON)
+                self.data = JSON as! NSArray
+                print("NO ME CHINGUES ")
+                print(self.data)
+                for j in JSON as! [AnyObject]{
+                    print(j["descripcion"])
+                }
+                
+                for dataX in self.data as! [AnyObject]{
+                    print(dataX)
+                    var evento = Evento( id: dataX["id"] as! Int, titulo: dataX["titulo"] as! String, fechaInicio: dataX["fechaInicio"] as! Date, fechaFinal: dataX["fechaFinal"] as! Date, lugar: dataX["lugar"] as! String, descripcion: dataX["descripcion"] as! String, tipo: dataX["tipo"] as! String, tema: dataX["tema"] as! Int)
+                    print("EVENTO /////////")
+                    print(evento)
+                }
             }
         }
     }
-    
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
+
 }
 
