@@ -8,6 +8,8 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -36,41 +38,54 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user
-        getEventos()
-        print(" //// QUE DESMADRE ////")
-        //print(self.data[0])
-        print(" //// QUE DESMADRE 2 ////")
-        
-        
+        seedEventos()
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func getEventos(){
-        Alamofire.request("https://feriaint.herokuapp.com/app/eventos").responseJSON { response in
-            print(response.request)  // original URL request
-            print(response.response) // HTTP URL response
-            print(response.data)     // server data
-            print(response.result)   // result of response serialization
-            
-            if let JSON = response.result.value {
-                //print("JSON: \(JSON)")
-                print(JSON)
-                self.data = JSON as! NSArray
-                print("NO ME CHINGUES ")
-                print(self.data)
-                for j in JSON as! [AnyObject]{
-                    print(j["descripcion"])
-                }
-                
-                for dataX in self.data as! [AnyObject]{
-                    print(dataX)
-                    var evento = Evento( id: dataX["id"] as! Int, titulo: dataX["titulo"] as! String, fechaInicio: dataX["fechaInicio"] as! Date, fechaFinal: dataX["fechaFinal"] as! Date, lugar: dataX["lugar"] as! String, descripcion: dataX["descripcion"] as! String, tipo: dataX["tipo"] as! String, tema: dataX["tema"] as! Int)
-                    print("EVENTO /////////")
-                    print(evento)
+    func seedEventos(){
+        
+        Alamofire.request("https://feriaint.herokuapp.com/app/eventos").responseJSON {
+            (responseData) -> Void in
+            if((responseData.result.value) != nil) {
+                let json = JSON(responseData.result.value!)
+                print(json)
+                for (_,subJson):(String, JSON) in json {
+
+                    let moc = DataController().managedObjectContext
+                    
+                    let entity = NSEntityDescription.insertNewObject(forEntityName: "Evento", into: moc) as! Evento
+                    
+                    // JSON TO DATA
+                    entity.setValue(Int(subJson["id"].stringValue), forKey: "id")
+                    entity.setValue(subJson["titulo"].stringValue, forKey: "titulo")
+                    
+                    print("fecha:")
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                    var date = dateFormatter.date(from: subJson["fechaInicio"].stringValue)
+                    if date == dateFormatter.date(from: subJson["fechaInicio"].stringValue){
+                        entity.setValue(date, forKey: "fechaInicio")
+                        print("se pudo")
+                    }
+                    date = dateFormatter.date(from: subJson["fechaFinal"].stringValue)
+                    if date == dateFormatter.date(from: subJson["fechaFinal"].stringValue){
+                        entity.setValue(date, forKey: "fechaFinal")
+                        print("se pudo")
+                    }
+                    entity.setValue(subJson["descripcion"].stringValue, forKey: "descripcion")
+                    entity.setValue(subJson["tipo"].stringValue, forKey: "tipo")
+                    entity.setValue(Int(subJson["tema"].stringValue), forKey: "tema_id")
+                    entity.setValue(subJson["hashtag"].stringValue, forKey: "hashtag")
+                    
+                    //Save
+                     do {
+                        try moc.save()
+                     } catch {
+                        fatalError("Failure to save context: \(error)")
+                     }
                 }
             }
         }

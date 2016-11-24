@@ -31,6 +31,7 @@
 import UIKit
 import Material
 import Font_Awesome_Swift
+import CoreData
 
 
 class RootViewController: UIViewController {
@@ -54,6 +55,7 @@ class RootViewController: UIViewController {
         prepareSearchButton()
         prepareNavigationItem()
         prepareNextButton()
+        fetch()
     }
     
     internal func handleNextButton() {
@@ -92,6 +94,19 @@ class RootViewController: UIViewController {
         tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: selectedColor], for: .selected)
         //tabBarItem.image = Icon.cm.audioLibrary?.tint(with: Color.blueGrey.base)
         //tabBarItem.selectedImage = Icon.cm.audioLibrary?.tint(with: Color.blue.base)
+    }
+    
+    func fetch() {
+        let moc = DataController().managedObjectContext
+        let eventoFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Evento")
+        print("algo")
+        do {
+            let fetchedPerson = try moc.fetch(eventoFetch) as! [Evento]
+            print(fetchedPerson)
+            
+        } catch {
+            fatalError("Failed to fetch person: \(error)")
+        }
     }
 }
 

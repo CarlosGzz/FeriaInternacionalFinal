@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Contenido" representedClassName="Contenido" syncable="YES" codeGenerationType="class">
+        <attribute name="contenido" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="formato" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id_cc" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="secuencia" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="contenido_cultural" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ContenidoCultural" inverseName="contenido" inverseEntity="ContenidoCultural" syncable="YES"/>
+    </entity>
+    <entity name="ContenidoCultural" representedClassName="ContenidoCultural" syncable="YES" codeGenerationType="class">
+        <attribute name="favorito" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tema_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tipo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="titulo" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="contenido" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Contenido" inverseName="contenido_cultural" inverseEntity="Contenido" syncable="YES"/>
+        <relationship name="tema" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tema" inverseName="contenidos" inverseEntity="Tema" syncable="YES"/>
+    </entity>
+    <entity name="Edicion" representedClassName=".Edicion" syncable="YES" codeGenerationType="class">
+        <attribute name="fechaFinal" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="fechaInicio" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="pais" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Evento" representedClassName=".Evento" syncable="YES" codeGenerationType="class">
+        <attribute name="descripcion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="favorito" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="fechaFinal" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="fechaInicio" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="hashtag" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lugar" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tema_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tipo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="titulo" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tema" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tema" inverseName="eventos" inverseEntity="Tema" syncable="YES"/>
+    </entity>
+    <entity name="Tema" representedClassName="Tema" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="contenidos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ContenidoCultural" inverseName="tema" inverseEntity="ContenidoCultural" syncable="YES"/>
+        <relationship name="eventos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evento" inverseName="tema" inverseEntity="Evento" syncable="YES"/>
+    </entity>
+    <entity name="Usuario" representedClassName="Usuario" syncable="YES" codeGenerationType="class">
+        <attribute name="correo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="puntos" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Evento" positionX="-63" positionY="-18" width="128" height="208"/>
+        <element name="ContenidoCultural" positionX="-101" positionY="261" width="128" height="148"/>
+        <element name="Edicion" positionX="333" positionY="324" width="128" height="88"/>
+        <element name="Tema" positionX="117" positionY="252" width="128" height="103"/>
+        <element name="Usuario" positionX="135" positionY="-9" width="128" height="103"/>
+        <element name="Contenido" positionX="-90" positionY="468" width="128" height="118"/>
+    </elements>
+</model>

@@ -2,6 +2,42 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Contenido+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Contenido+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:ContenidoCultural+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:ContenidoCultural+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Tema+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Tema+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Evento+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Evento+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Usuario+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Usuario+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Edicion+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Edicion+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:FeriaInternacional.xcodeproj">
    </FileRef>
    <FileRef

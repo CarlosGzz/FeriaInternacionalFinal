@@ -16,4 +16,7 @@ target 'FeriaInternacional' do
   # AlamoFire Pods
   pod 'Alamofire', '~> 4.0'
 
+  #SwiftyJSON
+  pod 'SwiftyJSON'
+
 end
